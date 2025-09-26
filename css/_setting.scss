@@ -1,0 +1,19 @@
+@use 'sass:math';
+
+$colorBlack: #333a3f;
+$colorWhite: #fff;
+$colorBlue: #18669e;
+$colorBlue--black: #282c33;
+$colorYellow: #f1c11a;
+$colorBtn: #5f82b3;
+
+$breakpoints: (
+  'tab': 'screen and (max-width: 900px)',
+  'pc' : 'screen and (min-width: 1390px)',
+) !default;
+
+@mixin mq($breakpoint: sp) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
